@@ -16,7 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color:grey;
-    height:620px;
+    height:640px;
     width: 450px;
     margin-top: 30px;
     border-radius: 16px;
@@ -33,6 +33,7 @@ body{
     margin-top: 24px;
     border-radius: 16px;
     background-color: white;
+    border: 2px solid black;
 }
 
 .displayButttons{
@@ -50,7 +51,7 @@ body{
     width: 50%;
     height: 100%;
     border-radius: 8px;
-    margin: 8px 16px;
+    margin: 16px;
     font-size: 24px;
     border: 2px solid black;
 }
@@ -66,9 +67,29 @@ body{
 
 .keypad{
     display: flex;
-    background-color: brown;    
+    background-color: grey;    
     width: 100%;
-    margin-top: 16px;
+    margin-top: 8pxpx;
     align-self: center;
     height: 320px;
+}
+.row{
+    margin: 8px;
+    width: 100%;
+    
+}
+
+.button{
+    display: flex;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 2px solid black;
+    margin: 8px;
+
 }
