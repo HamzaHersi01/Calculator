@@ -1,7 +1,7 @@
 inputs = {
     num1:null,
     operand: null,
-    num2: null
+    num2: null,
 }
 
 function add(x, y){
@@ -35,3 +35,27 @@ function calculate(inputs){
             return "Invalid operand";
     }
 }
+
+function init(){
+    numbers = document.querySelectorAll('.number');
+    numbers.forEach(button => {
+        button.addEventListener('click',function(event){
+        const number = event.target.id;
+        if(inputs.num1 === null){
+            inputs.num1 = number;
+        }else if (inputs.num1 === null){
+            inputs.num2 = number;
+        }})
+
+    operands = document.querySelectorAll('.operand');
+    operands.forEach(operand =>{
+        operand.addEventListener('click', function(event){
+
+        })
+    })
+    });
+    
+
+}
+
+init();

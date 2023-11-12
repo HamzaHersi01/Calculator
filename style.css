@@ -98,7 +98,7 @@ body{
     
 }
 
-.button{
+.number,.operand,.decimal,.equal{
     display: flex;
     height: 75px;
     width: 75px;
