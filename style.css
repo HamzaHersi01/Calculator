@@ -1,1 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
 
+body{
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:red;
+    height:620px;
+    width: 450px;
+    margin-top: 30px;
+    border-radius: 16px;
+}
+
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    width: 400px;
+    background-color: grey;
+}
