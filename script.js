@@ -24,9 +24,9 @@ function div(x, y){
 }
 
 function updateDisplay(){
-    if(inputs.operand=== null & inputs.num2=== null){
+    if(inputs.operand=== null && inputs.num2=== null){
         document.querySelector('.currentCal').textContent= `${inputs.num1} `;
-    }else if (inputs.operand=== !null & inputs.num2=== null){
+    }else if (inputs.operand=== !null && inputs.num2=== null){
         document.querySelector('.currentCal').textContent= `${inputs.num1} ${inputs.operand}`;
     }else{
         document.querySelector('.currentCal').textContent= `${inputs.num1} ${inputs.operand} ${inputs.num2}`;
@@ -43,8 +43,6 @@ function calculate(inputs){
             return mult(inputs.num1, inputs.num2);
         case '/':
             return div(inputs.num1, inputs.num2);
-        default:
-            return "Invalid operand";
     }
 }
 
