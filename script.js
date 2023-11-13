@@ -24,14 +24,38 @@ function div(x, y){
 }
 
 function updateDisplay(){
-    if(inputs.operand=== null && inputs.num2=== null){
-        document.querySelector('.currentCal').textContent= `${inputs.num1} `;
-    }else if (inputs.operand=== !null && inputs.num2=== null){
-        document.querySelector('.currentCal').textContent= `${inputs.num1} ${inputs.operand}`;
+    if(inputs.operand === null && inputs.num2 === null){
+        document.querySelector('.currentCal').textContent = `${inputs.num1} `;
+        console.log("Num1")
+    }else if (inputs.operand != null && inputs.num2 === null){
+        document.querySelector('.currentCal').textContent = `${inputs.num1} ${inputs.operand}`;
+        console.log('operand')
     }else{
-        document.querySelector('.currentCal').textContent= `${inputs.num1} ${inputs.operand} ${inputs.num2}`;
+        document.querySelector('.currentCal').textContent = `${inputs.num1} ${inputs.operand} ${inputs.num2}`;
     }
 }
+
+function appendInput(key, number){
+    if(key === 'num1'){
+            if(inputs.num1 === null){  
+                inputs.num1 = number;
+                updateDisplay();
+            }else{
+                inputs.num1 = String(inputs.num1 + number);
+                updateDisplay();
+            }
+        
+    }else{
+            if(inputs.num2 === null){  
+                inputs.num2 = number;
+                updateDisplay();
+            }else{
+                inputs.num2 = String(inputs.num2 + number);
+                updateDisplay();
+            }
+    }
+}
+   
 
 function calculate(inputs){
     switch(inputs.operand) {
@@ -52,23 +76,11 @@ function init(){
         button.addEventListener('click',function(event){
         const number = event.target.id;
         if(inputs.operand === null){
-            if(inputs.num1 === null){
-                inputs.num1 = number;
-                updateDisplay();
-            }else{
-                inputs.num1 = String(inputs.num1 + number)
-                updateDisplay();
-            }
+            appendInput('num1', number);
             
 
         }else{
-            if(inputs.num2 === null){
-                inputs.num2 = number;
-                updateDisplay();
-            }else{
-                inputs.num2 = String(inputs.num2 + number);
-                updateDisplay();
-            }
+            appendInput('num2', number);
         }
         
     })
@@ -85,7 +97,7 @@ function init(){
         inputs.num1 = Number(inputs.num1);
         inputs.num2 = Number(inputs.num2);
         inputs.sum = calculate(inputs)
-        document.querySelector('.previousAns').textContent = inputs.sum
+        document.querySelector('.currentCal').textContent = inputs.sum
         
     })
 
