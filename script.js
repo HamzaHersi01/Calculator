@@ -30,6 +30,13 @@ function formatDisplay(){
     updateDisplay();
 }
 
+function clear(){
+    inputs.num1 = null;
+    inputs.operand = null;
+    inputs.num2 = null;
+    inputs.sum = null;
+    document.querySelector(".currentCal").textContent = ` `;
+}
 function updateDisplay() {
     if (inputs.operand === null && inputs.num2 === null) {
         document.querySelector(".currentCal").textContent = `${inputs.num1} `;
@@ -106,6 +113,10 @@ function init() {
         document.querySelector(".currentCal").textContent = inputs.sum;
         formatDisplay();
     });
+
+    document.querySelector('.clear').addEventListener('click',function(){
+        clear();
+    })
 }
 
 init();
